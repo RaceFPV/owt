@@ -1,29 +1,37 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="row justify-content-md-center" style="padding-top: 10vh;">
+  <div class="col-sm-4">
+    <div class="card text-white bg-secondary mb-3">
+      <div class="card-header">
+        Register
+      </div>
+      <div class="card-body" style="padding-bottom: 0.5rem;">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+        
+          <div class="form-group row">
+            <%= f.label :email, class: "col-sm-3 col-form-label" %>
+            <div class="col-sm-9">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+          </div>
+        
+          <div class="form-group row">
+            <%= f.label :password, class: "col-sm-3 col-form-label" %>
+            <div class="col-sm-9">
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+            </div>
+          </div>
+      </div>
+      <div class="card-footer text-muted">
+          <div class="actions">
+            <%= f.submit "Sign up", class: "btn btn-secondary btn-block" %>
+          </div>
+        <% end %>
+        <hr style="margin-top: 10px; margin-bottom: 5px;">
+        <div class="text-center">
+          <%= render "users/shared/links" %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
