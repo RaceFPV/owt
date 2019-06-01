@@ -1,5 +1,5 @@
 <header style="margin-top: -60px;">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="90000">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -8,6 +8,9 @@
     <div class="carousel-inner" role="listbox">
       <!-- Slide One - Set the background image for this slide in the line below -->
       <div class="carousel-item active" style="background-image: url(<%= asset_path 'tranq.jpeg' %>)">
+        <div class="video-background">
+        <iframe src="https://www.youtube.com/embed/rfzjZrlbm8M?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&hd=1&playlist=rfzjZrlbm8M" frameborder="0" allowfullscreen></iframe>
+        </div>
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Overwatch Tranquility</h2>
           <p class="lead">Where pro's are born.</p>
@@ -18,13 +21,6 @@
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Overwatch Tranquility</h2>
           <p class="lead">Where dreams are made.</p>
-        </div>
-      </div>
-      <!-- Slide Three - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url(<%= asset_path 'tranq.jpeg' %>)">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Overwatch Tranquility</h2>
-          <p class="lead">Where heros rise.</p>
         </div>
       </div>
     </div>
