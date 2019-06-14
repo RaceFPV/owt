@@ -1,16 +1,33 @@
 .carousel-item {
   height: 80vh;
   min-height: 350px;
-  background: no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-.carousel-caption {
-  color: #343a40;
+.index-carousel {
+  padding-top: 56px;
 }
+
+.carousel-caption {
+  -moz-border-radius:25px;
+  -webkit-border-radius:25px;
+  border-radius:25px;
+  background-color: rgba(255,255,255,1); /* slighly transparent white */
+  border-color: rgba(200,200,200,0.3); /*Very transparent black*/
+  color: #343a40;
+  position: absolute;
+  right: 15%;
+  bottom: 40%;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
 
 .carousel-indicators li {
   background-color: #343a40;
@@ -127,6 +144,31 @@ body {
 
 .bg-dark .card-header {
   background-color: #383938 !important;
+}
+
+.parallax {
+  /* Set a specific height */
+  height: 500px; 
+  width: 100vw;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-call-action {
+  -moz-border-radius:25px;
+  -webkit-border-radius:25px;
+  border-radius:25px;
+  background-color: rgba(255,255,255,1); /* slighly transparent white */
+  border-color: rgba(200,200,200,0.3); /*Very transparent black*/
+  color: #343a40;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10%;
+  text-align: center;
 }
 
 @media (min-width: 48em) {
