@@ -7,28 +7,39 @@
         </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <%= link_to('Home', root_path, class: "nav-link") %>
-          <span class="sr-only">(current)</span>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Current Season
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to('Discord Tier', tier_discord_path, class: "dropdown-item") %>
+            <%= link_to('Harmony Tier', tier_harmony_path, class: "dropdown-item") %>
+          </div>
         </li>
-        <li class="nav-item">
-          <%= link_to('About us', root_path, class: "nav-link") %>
-          <span class="sr-only">(current)</span>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Past Seasons
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to('Season Two', legacy_one_path, class: "dropdown-item") %>
+            <%= link_to('Season One', legacy_two_path, class: "dropdown-item") %>
+          </div>
         </li>
-        <li class="nav-item">
-          <%= link_to('Current Season', root_path, class: "nav-link") %>
-          <span class="sr-only">(current)</span>
-        </li>
-        <li class="nav-item">
-          <%= link_to('Past Seasons', root_path, class: "nav-link") %>
-          <span class="sr-only">(current)</span>
-        </li>
+        <!--- We are not using logins right now
 				<% if user_signed_in? %>
 					<li class="nav-item"><%= link_to('My Account', edit_user_registration_path, class: "nav-link") %></li>
 					<li class="nav-item"><%= link_to "Sign out", destroy_user_session_path, class: "nav-link", :method => :delete %></li>
 				<% else %>
 					<li class="nav-item"><%= link_to('Login', new_user_session_path, class: "nav-link") %></li>
 				<% end %>
+				--->
+        <li class="nav-item">
+          <%= link_to('Swag', "https://shop.spreadshirt.com/owtranquility/", class: "nav-link") %>
+        </li>
+        <li class="nav-item">
+          <%= link_to('Discord', "https://discord.gg/DFyvhG", class: "nav-link") %>
+        </li>
+      </ul>
       </ul>
     </div>
   </div>
