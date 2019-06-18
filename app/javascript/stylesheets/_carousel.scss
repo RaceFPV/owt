@@ -1,0 +1,34 @@
+.carousel-item {
+  height: 80vh;
+  min-height: 350px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.index-carousel {
+  margin-top: -56px;
+}
+
+.carousel-caption {
+  -moz-border-radius:25px;
+  -webkit-border-radius:25px;
+  border-radius:25px;
+  background-color: rgba(255,255,255,1); /* slighly transparent white */
+  border-color: rgba(200,200,200,0.3); /*Very transparent black*/
+  color: #343a40;
+  position: absolute;
+  right: 15%;
+  bottom: 40%;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+
+.carousel-indicators li {
+  background-color: #343a40;
+}
