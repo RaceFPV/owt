@@ -17,6 +17,7 @@ module Owt
     # the framework and any gems in your application.
     
     config.hosts << "6e9412cf6bb342f7bc538a84417dd0fc.vfs.cloud9.us-east-1.amazonaws.com"
+    config.hosts << "overwatch-tranquility.herokuapp.com"
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end
