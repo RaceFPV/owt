@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'twitter'
+gem 'google_drive'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

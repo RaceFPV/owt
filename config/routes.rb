@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #individual pages
   get 'home/index'
   get 'home/about'
+  get 'home/scrape'
   get 'tier/discord'
   get 'tier/harmony'
   get 'legacy/one'
