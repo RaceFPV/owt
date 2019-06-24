@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'legacy/two'
   
   #team pages
+  get 'team/ascension'
   get 'team/aimbots'
   get 'team/alt_f4'
   get 'team/built_off_tilt'
@@ -36,14 +37,17 @@ Rails.application.routes.draw do
   get 'team/maelstrom'
   get 'team/majesty_ruby'
   get 'team/meteors'
-  get 'team/minty_hippo'
+  get 'team/minty_hippos'
   get 'team/otaku'
   get 'team/overtime'
   get 'team/prodigious'
   get 'team/renovatio'
+  get 'team/revival'
   get 'team/snowday'
   get 'team/sugar_rush'
+  get 'team/tailwind'
   get 'team/tough_luck'
+  get 'team/undead_battery'
   get 'team/vitamin_c'
   
   #for login/logoff/registration

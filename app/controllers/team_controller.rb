@@ -1,4 +1,7 @@
 class TeamController < ApplicationController
+  def ascension
+  end
+  
   def aimbots
   end
 
@@ -59,7 +62,7 @@ class TeamController < ApplicationController
   def meteors
   end
 
-  def minty_hippo
+  def minty_hippos
   end
 
   def otaku
@@ -73,6 +76,9 @@ class TeamController < ApplicationController
 
   def renovatio
   end
+  
+  def revival
+  end
 
   def snowday
   end
@@ -80,7 +86,13 @@ class TeamController < ApplicationController
   def sugar_rush
   end
 
+  def tailwind
+  end
+
   def tough_luck
+  end
+
+  def undead_battery
   end
 
   def vitamin_c
