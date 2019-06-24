@@ -1,7 +1,10 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <%= link_to('Overwatch Tranquility', root_path, class: "navbar-brand") %>
+    <%= link_to(root_path, class: "navbar-brand") do %>
+      <%= image_tag 'owt_logo_small.png', class: 'd-inline-block align-top', style: 'width: 30px; height: 30px;' %>
+      Overwatch Tranquility
+    <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,21 +28,20 @@
             <%= link_to('Season One', legacy_two_path, class: "dropdown-item") %>
           </div>
         </li>
-        <!--- We are not using logins right now
+        <!-- We are not using logins right now
 				<% if user_signed_in? %>
 					<li class="nav-item"><%= link_to('My Account', edit_user_registration_path, class: "nav-link") %></li>
 					<li class="nav-item"><%= link_to "Sign out", destroy_user_session_path, class: "nav-link", :method => :delete %></li>
 				<% else %>
 					<li class="nav-item"><%= link_to('Login', new_user_session_path, class: "nav-link") %></li>
 				<% end %>
-				--->
+				-->
         <li class="nav-item">
           <%= link_to('Swag', "https://shop.spreadshirt.com/owtranquility/", class: "nav-link", :target => "_blank") %>
         </li>
         <li class="nav-item">
           <%= link_to('Discord', "https://discord.gg/DFyvhG", class: "nav-link", :target => "_blank") %>
         </li>
-      </ul>
       </ul>
     </div>
   </div>
