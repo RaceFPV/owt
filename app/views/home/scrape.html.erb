@@ -1,6 +1,8 @@
 <% session = GoogleDrive::Session.from_service_account_key(StringIO.new(ENV['SERVICE_ACCOUNT'])) %>
-<% ws = session.spreadsheet_by_key("1FeXH7yDokCLiQjcjb14Pxq-gkHhKu49KDB6YZssHqGc").worksheets[1] %>
-<h1><%= ws.title %> team roster:</h1>
+<% ws = session.spreadsheet_by_key("1FeXH7yDokCLiQjcjb14Pxq-gkHhKu49KDB6YZssHqGc").worksheets %>
+<% ws.each do |x| %>
+<h1><%= x.title %> team roster:</h1>
 <% (6..15).each do |i| %>
-<h3><%= ws[i,1] %></h3>
+<h3><%= x[i,1] %></h3>
+<% end %>
 <% end %>
