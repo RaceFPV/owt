@@ -9,8 +9,13 @@ class DiscordRosterScrapeJob < ApplicationJob
     ws.drop(1).each do |x|
       if Team.where(name: x.title).exists?
         puts "Team already exists, checking for updates"
-        team = Team.where(name: x.title)
-        team.sr ||= x[6, 4].to_i
+        team = Team.find_by_name(x.title)
+        sr = x[16, 4]
+        if !sr.nil? and team.sr.nil?
+          team.sr = sr.to_i
+        elsif !sr.nil?
+          team.sr ||= sr.to_i
+        end
         team.gm ||= x[18, 1]
         team.captain ||= x[19, 1]
         team.coach ||= x[20, 1]
@@ -25,7 +30,10 @@ class DiscordRosterScrapeJob < ApplicationJob
         puts "Team #{x.title} not found... creating entry"
         team = Team.new
         team.name = x.title
-        team.sr = x[6, 4].to_i
+        sr = x[16, 4]
+        if !sr.nil?
+          team.sr = sr.to_i
+        end
         team.gm = x[18, 1]
         team.captain = x[19, 1]
         team.coach = x[20, 1]
@@ -41,7 +49,7 @@ class DiscordRosterScrapeJob < ApplicationJob
   end
 end
 
-# teams schemaa
+# teams schema
 #    t.string "name"
 #    t.integer "sr"
 #    t.string "gm"
