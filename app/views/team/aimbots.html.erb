@@ -1,0 +1,15 @@
+<% team = Team.find_by_name("Aimbots") %>
+<h1><%= team.name %></h1>
+<h2>Tier: <%= team.tier %></h2>
+<h2>SR: <%= team.sr %></h2>
+<h2>GM: <%= team.gm %></h2>
+<h2>Coach: <%= team.coach %></h2>
+<h2>Captain: <%= team.captain %></h2>
+<h2>Affiliate: <%= team.affiliate %></h2>
+<h2>Twitter: <%= team.twittername %></h2>
+<h2>Discord: <%= team.discordname %></h2>
+<br/>
+<h2>Roster:</h2>
+<% team.player.each do |x| %>
+  <h4><%= x.name %></h4>
+<% end %>
