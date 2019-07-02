@@ -7,5 +7,5 @@ class ApplicationJob < ActiveJob::Base
   
   # Enqueue a job to be performed tomorrow at noon.
   DiscordRosterScrapeJob.set(wait_until: (DateTime.now + 10.minutes)).perform_later
-  HarmonyRosterScrapeJob.set(wait_until: (DateTime.now + 10.minutes)).perform_later
+  HarmonyRosterScrapeJob.set(wait_until: (DateTime.now + 12.minutes)).perform_later
 end
