@@ -29,6 +29,7 @@ class HarmonyRosterScrapeJob < ApplicationJob
         team.discordlink ||= x[21, 2]
         team.twittername ||= x[22, 1]
         team.twitterlink ||= x[22, 2]
+        team.tier ||= "harmony"
         puts "Collected team data..."
         if team.changed?
           puts "Team #{x.title} data changed, saving changes..."
@@ -52,6 +53,7 @@ class HarmonyRosterScrapeJob < ApplicationJob
         team.discordlink = x[21, 2]
         team.twittername = x[22, 1]
         team.twitterlink = x[22, 2]
+        team.tier = "harmony"
         puts "Collected team data... saving"
         team.save!
         puts "Save complete"
@@ -75,10 +77,11 @@ class HarmonyRosterScrapeJob < ApplicationJob
             player.battletag ||= x[y, 2]
             player.role ||= x[y, 3]
             player.team_id ||= Team.find_by_name(x.title).id
+            player.tier ||= "harmony"
             puts "Collected player data..."
             if player.changed?
               puts "Player #{x[y, 1]} data changed, saving changes..."
-              team.save!
+              player.save!
             else  
               puts "Player #{x[y, 1]} data not changed"
             end
@@ -91,9 +94,10 @@ class HarmonyRosterScrapeJob < ApplicationJob
             if !sr.nil?
               player.sr = sr.to_i
             end
-            player.battletag ||= x[y, 2]
-            player.role ||= x[y, 3]
-            player.team_id ||= Team.find_by_name(x.title).id
+            player.battletag = x[y, 2]
+            player.role = x[y, 3]
+            player.team_id = Team.find_by_name(x.title).id
+            player.tier = "harmony"
             puts "Collected player data... saving"
             player.save!
             puts "Save complete"
@@ -115,6 +119,7 @@ end
 #    t.string "twittername"
 #    t.string "twitterlink"
 #    t.string "affiliate"
+#    t.string "tier"
 
 # players schema
 #    t.integer "team_id", null: false
@@ -123,3 +128,4 @@ end
 #    t.string "role"
 #    t.integer "sr"
 #    t.string "email"
+#    t.string "tier"
