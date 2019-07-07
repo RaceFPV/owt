@@ -79,7 +79,7 @@ class DiscordRosterScrapeJob < ApplicationJob
             puts "Collected player data..."
             if player.changed?
               puts "Player #{x[y, 1]} data changed, saving changes..."
-              team.save!
+              player.save!
             else  
               puts "Player #{x[y, 1]} data not changed"
             end
