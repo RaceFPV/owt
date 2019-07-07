@@ -38,9 +38,10 @@
 <% team.player.each do |x| %>
     <li class="list-group-item">
     <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-4"><h2><%= x.name %></h2></div>
-        <div class="col-sm-3" style="border-radius: 25px;background-color:#222">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3"><h2><a class="top-cover-link-black" href="https://www.overbuff.com/players/pc/<%= x.battletag.gsub("#","-") %>"><%= x.name %></a></h2></div>
+        <div class="col-sm-3"><h3>SR: <%= if x.sr == 0 then "N/A" else x.sr end %></h3></div>
+        <div class="col-sm-4" style="border-radius: 25px;background-color:#222">
             <% if x.role.upcase == "TANK" %>
                 <b style="color: #DDD;">Tank</b>
                 <img style="height: 50px;" src="<%= asset_path 'TankIcon.png' %>">
@@ -55,7 +56,6 @@
                 <img style="height: 50px;" src="<%= asset_path 'FlexIcon.png' %>">
             <% end %>
         </div>
-        <div class="col-sm-1"></div>
     </div>
     </li>
 <% end %>
