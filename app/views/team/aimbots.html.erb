@@ -36,7 +36,7 @@
 <div class="container">
     <ul class=" list-group list-group-flush">
 <% team.player.each do |x| %>
-    <li class="list-group-item">
+    <li class="list-group-item" style="background-color:#f6f6f6">
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-3"><h2><a class="top-cover-link-black" href="https://www.overbuff.com/players/pc/<%= x.battletag.gsub("#","-") %>"><%= x.name %></a></h2></div>
