@@ -1,35 +1,41 @@
 <% team = Team.find_by_name("Aimbots") %>
-<h1><%= team.name %></h1>
+<div class="row align-items-center justify-content-center top-cover-splash-aimbots">
+    <div class="col-sm-2">
+        <img style="max-height: 250px;" src="<%= asset_path 'season_three_teams/discord/aimbots_too.png' %>">
+    </div>
+    <div class="col-sm-2">
+        <h1><%= team.name %></h1>
+    </div>
+    <div class="col-sm-2">
+        <h6>Division</h6>
+        <%= link_to tier_discord_path, class: 'top-cover-link-black' do %><h4><%= team.tier.upcase %></h4> <% end %>
+        <br/>
+        <h6>SR</h6>
+        <h4><%= team.sr %></h4>
+    </div>
+    <div class="col-sm-2">
+        <h6>GM</h6>
+        <h4><%= team.gm %></h4>
+        <br/>
+        <h6>Coach</h6>
+        <h4><%= team.coach %></h4>
+    </div>
+    <div class="col-sm-2">
+        <h6>Twitter</h6>
+        <h4><a class="top-cover-link-black" href="https://twitter.com/<%= team.twitterlink %>"><%= team.twittername %></a></h4>
+        <br/>
+        <h6>Discord</h6>
+        <h4><a class="top-cover-link-black" href="<%= team.discordlink %>"><%= team.discordname %></a></h4>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
 <br/>
-<h2>Tier: <div style="color: red"><%= team.tier %></div></h2>
-<br/>
-<h2>SR: <div style="color: red"><%= team.sr %></div></h2>
-<br/>
-<% if !team.gm.empty? %>
-    <h2>GM: <div style="color: red"><%= team.gm %></div></h2>
-    <br/>
-<% end %>
-<% if !team.coach.empty? %>
-    <h2>Coach: <div style="color: red"><%= team.coach %></div></h2>
-    <br/>
-<% end %>
-<% if !team.captain.empty? %>
-    <h2>Captain: <div style="color: red"><%= team.captain %></div></h2>
-    <br/>
-<% end %>
-<% if !team.affiliate.nil? %>
-    <h2>Affiliate: <div style="color: red"><%= team.affiliate %></div></h2>
-    <br/>
-<% end %>
-<% if !team.twittername.empty? %>
-    <h2>Twitter: <div style="color: red"><%= team.twittername %></div></h2>
-    <br/>
-<% end %>
-<% if !team.discordname.empty? %>
-    <h2>Discord: <div style="color: red"><%= team.discordname %></div></h2>
-    <br/>
-<% end %>
 <h2>Roster:</h2>
 <% team.player.each do |x| %>
-  <h4 style="color: red"><%= x.name %></h4>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"><h4 style="color: red"><%= x.name %></h4></div>
+        <div class="col-sm-4"></div>
+      
+    </div>
 <% end %>
