@@ -14,7 +14,10 @@ class TeamController < ApplicationController
   def careless_pandas
   end
 
-  def cherry_bomb
+  def spare_change
+  end
+  
+  def holy_jalapenos
   end
 
   def comets

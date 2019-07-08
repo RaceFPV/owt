@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'team/alt_f4'
   get 'team/built_off_tilt'
   get 'team/careless_pandas'
-  get 'team/cherry_bomb'
+  get 'team/spare_change'
   get 'team/comets'
   get 'team/ddos'
   get 'team/eclipse'
@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   get 'team/tough_luck'
   get 'team/undead_battery'
   get 'team/vitamin_c'
+  get 'team/holy_jalapenos'
   
   #for login/logoff/registration
   devise_for :users
