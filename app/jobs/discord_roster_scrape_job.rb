@@ -1,4 +1,4 @@
-class DiscordRosterScrapeJob < ApplicationJob
+class DiscordRosterScrapeJob < ActiveJob::Base
   queue_as :default
 
   def perform
