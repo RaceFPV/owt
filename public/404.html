@@ -4,64 +4,215 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+/*
+ * Globals
+ */
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #343a40;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+/*
+ * Base structure
+ */
+
+@font-face {
+  font-family: 'Industry Bold';
+  src: url(/assets/INDUSTRY-BOLD.ttf) format("truetype");
+} 
+
+@font-face {
+  font-family: 'Industry Medium';
+  src: url(/assets/INDUSTRY-MEDIUM.ttf) format("truetype");
+} 
+
+html,
+body {
+  height: 100%;
+  background-color: #f6f6f6;
+  font-family:"Industry Bold","Arial","Impact",sans-serif;
+  line-height: 1.15;
+  color: #000;
+  overflow-x: hidden !important;
+}
+
+body {
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.navbar-dark {
+  background-color: #111111 !important;
+  color: #b4b4b4 !important;
+}
+
+.bg-dark {
+  background-color: #111111 !important;
+  color: #fff !important;
+}
+
+.bg-dark .card-header {
+  background-color: #383938 !important;
+}
+
+.parallax {
+  /* Set a specific height */
+  height: 500px; 
+  width: 100vw;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-call-action {
+  -moz-border-radius:25px;
+  -webkit-border-radius:25px;
+  border-radius:25px;
+  background-color: rgba(255,255,255,1); /* slighly transparent white */
+  border-color: rgba(200,200,200,0.3); /*Very transparent black*/
+  color: #343a40;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10%;
+  text-align: center;
+}
+
+#wrap {
+  min-height: 100%;
+  margin-top: -60px;
+}
+
+#main {
+  overflow: auto;
+  padding-bottom: 90px; /* this needs to be bigger than footer height*/
+  padding-top: 118px;
+}
+
+footer {
+  position: relative;
+  margin-top: -90px; /* negative value of footer height */
+  height: 60px;
+  clear: both;
+  padding-top: 20px;
+}
+
+.footer-link {
+  color: #000 !important;
+  text-decoration: none !important;    
+}
   </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  <body class="text-center">
+    <div id="wrap">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+          <img class="d-inline-block align-top" style="width: 30px; height: 30px;" src="/assets/owt_logo_small-9ce8c889735ec467bcfed392a2e5925d86a52e11d3427a2beb2d99687e7543ee.png">
+          Overwatch Tranquility
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Current Season
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a href="/tier/discord" class="dropdown-item">Discord Tier</a>
+            <a href="/tier/harmony" class="dropdown-item">Harmony Tier</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Past Seasons
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a href="/legacy/two" class="dropdown-item">Season Two</a>
+            <a href="/legacy/one" class="dropdown-item">Season One</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="https://shop.spreadshirt.com/owtranquility/" class="nav-link" target="_blank">Swag</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://discord.gg/DFyvhG" class="nav-link" target="_blank">Discord</a>
+        </li>
+      </ul>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
+</nav>
+
+      <div id="main" class="clear-top">
+<br/><br/><br/><br/>
+    <div>
+      <h1>404</h1>
+      <h1>The page you were looking for doesn't exist.</h1>
+  </div>
+  
+      </div>
+    </div>
+  <footer class="text-muted">
+  <div class="container">
+    <p>Crafted with love for Overwatch Tranquility by <a href="https://github.com/racefpv" class="footer-link">RaceFPV</a></p>
+  </div>
+</footer>
 </body>
 </html>
