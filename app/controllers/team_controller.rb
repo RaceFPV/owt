@@ -1,23 +1,14 @@
 class TeamController < ApplicationController
-  def ascension
-  end
-  
   def aimbots
   end
 
   def alt_f4
   end
 
-  def built_off_tilt
-  end
-
   def careless_pandas
   end
 
-  def spare_change
-  end
-  
-  def holy_jalapenos
+  def cherry_bomb
   end
 
   def comets
@@ -43,6 +34,9 @@ class TeamController < ApplicationController
 
   def harmony_in_chaos
   end
+  
+  def holy_jalapenos
+  end
 
   def instaloch
   end
@@ -54,6 +48,9 @@ class TeamController < ApplicationController
   end
 
   def karma
+  end
+
+  def kommit
   end
 
   def maelstrom
@@ -74,28 +71,28 @@ class TeamController < ApplicationController
   def overtime
   end
 
+  def pacified_pythons
+  end
+
   def prodigious
   end
 
   def renovatio
   end
   
-  def revival
+  def snowday
   end
 
-  def snowday
+  def spare_change
   end
 
   def sugar_rush
   end
 
-  def tailwind
-  end
-
   def tough_luck
   end
 
-  def undead_battery
+  def unded_battery
   end
 
   def vitamin_c

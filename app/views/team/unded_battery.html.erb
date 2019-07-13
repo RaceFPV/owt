@@ -1,0 +1,63 @@
+<% team = Team.find_by_name("Unded Battery") %>
+<div class="row align-items-center justify-content-center top-cover-splash-aimbots">
+    <div class="col-sm-2">
+        <img style="max-height: 250px;" src="<%= asset_path 'season_three_teams/harmony/undead_too.png' %>">
+    </div>
+    <div class="col-sm-2">
+        <h1><%= team.name %></h1>
+    </div>
+    <div class="col-sm-2">
+        <h6>Division</h6>
+        <%= link_to tier_discord_path, class: 'top-cover-link-black' do %><h4><%= team.tier.upcase %></h4> <% end %>
+        <br/>
+        <h6>SR</h6>
+        <h4><%= team.sr %></h4>
+    </div>
+    <div class="col-sm-2">
+        <h6>GM</h6>
+        <h4><%= if team.gm.empty? then "None" else team.gm end %></h4>
+        <br/>
+        <h6>Coach</h6>
+        <h4><%= if team.coach.empty? then "None" else team.coach end %></h4>
+        <br/>
+        <h6>Affiliate</h6>
+        <h4><%= if team.affiliate.nil? then "None" else team.affiliate end %></h4>
+    </div>
+    <div class="col-sm-2">
+        <h6>Twitter</h6>
+        <h4><a class="top-cover-link-black" href="https://twitter.com/<%= team.twitterlink %>"><%= team.twittername %></a></h4>
+        <br/>
+        <h6>Discord</h6>
+        <h4><a class="top-cover-link-black" href="<%= team.discordlink %>"><%= team.discordname %></a></h4>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+<br/><br/>
+<div class="container">
+    <ul class=" list-group list-group-flush">
+<% team.player.each do |x| %>
+    <li class="list-group-item" style="background-color:#f6f6f6">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3"><h2><a class="top-cover-link-black" href="https://www.overbuff.com/players/pc/<%= x.battletag.gsub("#","-") %>"><%= x.name %></a></h2></div>
+        <div class="col-sm-3"><h3>SR: <%= if x.sr == 0 then "N/A" else x.sr end %></h3></div>
+        <div class="col-sm-4" style="border-radius: 25px;background-color:#222">
+            <% if x.role.upcase == "TANK" %>
+                <b style="color: #DDD;">Tank</b>
+                <img style="height: 50px;" src="<%= asset_path 'TankIcon.png' %>">
+            <% elsif x.role.upcase == "SUPPORT" %>
+                <b style="color: #DDD;">Support</b>
+                <img style="height: 50px;" src="<%= asset_path 'SupportIcon.png' %>">
+            <% elsif x.role.upcase == "DPS" %>
+                <b style="color: #DDD;">DPS</b>
+                <img style="height: 50px;" src="<%= asset_path 'DPSIcon.png' %>">
+            <% else %>
+                <b style="color: #DDD;">Flex</b>
+                <img style="height: 50px;" src="<%= asset_path 'FlexIcon.png' %>">
+            <% end %>
+        </div>
+    </div>
+    </li>
+<% end %>
+</ul>
+</div>
