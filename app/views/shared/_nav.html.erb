@@ -10,14 +10,11 @@
         </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Current Season
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to('Discord Tier', tier_discord_path, class: "dropdown-item") %>
-            <%= link_to('Harmony Tier', tier_harmony_path, class: "dropdown-item") %>
-          </div>
+        <li class="nav-item">
+          <%= link_to('Discord', tier_discord_path, class: "nav-link") %>
+        </li>
+        <li class="nav-item">
+          <%= link_to('Harmony', tier_harmony_path, class: "nav-link") %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
