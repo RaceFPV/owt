@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2019_07_02_034218) do
 
   create_table "players", force: :cascade do |t|
-    t.integer "team_id", null: false
+    t.integer "team_id"
     t.string "name"
     t.string "battletag"
     t.string "role"
@@ -53,5 +53,4 @@ ActiveRecord::Schema.define(version: 2019_07_02_034218) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "players", "teams"
 end
