@@ -1,14 +1,15 @@
-  <div class="col-md-6">
-    <div class="card flex-md-row mb-4 box-shadow h-md-250">
-      <div class="card-body d-flex flex-column align-items-start">
-        <h3 class="mb-0">
-          <a class="text-dark" href="#">Vitamin C</a>
+<% team = Team.find_by_name("Vitamin C") %>
+    <div class="card text-center" style="width: 18rem;margin-left: 5px; margin-right: 5px;">
+      <img class="card-img-top" src="<%= asset_path 'season_three_teams/harmony/vitaminC_too.png' %>">
+      <div class="card-body-nopad">
+        <h3 class="mb-0 text-dark">
+          <%= team.name %>
         </h3>
-        <div class="mb-1 text-muted">Average SR: <%= Team.find_by_name("Vitamin C").sr %></div>
-        <hr style="margin-top: 10px; margin-bottom: 5px;">
-        <!---<p class="card-text mb-auto">Something interesting about the team goes here, or maybe the team members.....</p>--->
-        <%= link_to 'Team Page', team_vitamin_c_path, style: 'color: #000;' %>
+        <h5 class="text-dark">Total members: <%= team.player.count %></h5>
+        <div class="text-muted">Average SR: <%= team.sr %></div>
+        <br/>
+        <div class="card-footer-nopad">
+          <%= link_to 'Roster', team_vitamin_c_path, class: 'btn btn-block btn-light' %>
+        </div>
       </div>
-      <img class="card-img-right flex-auto d-none d-md-block team-card-logo" src="<%= asset_path 'season_three_teams/harmony/vitaminC_too.png' %>">
     </div>
-  </div>

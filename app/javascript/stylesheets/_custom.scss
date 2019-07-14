@@ -125,3 +125,21 @@ body {
  max-width: 150px;
  max-height: 150px; 
 }
+
+.card-body-nopad {
+  padding: 0px !important;
+}
+
+.card-footer-nopad {
+  padding: 0px !important;
+}
+
+.team-card-size {
+  width: 18rem;
+  margin: 5px;
+}
+
+.team-card-btn {
+  border-radius: 0px !important;
+  border: none !important;
+}
