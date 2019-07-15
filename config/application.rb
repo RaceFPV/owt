@@ -19,6 +19,8 @@ module Owt
     
     config.hosts << "6e9412cf6bb342f7bc538a84417dd0fc.vfs.cloud9.us-east-1.amazonaws.com"
     config.hosts << "overwatch-tranquility.herokuapp.com"
+    config.hosts << "www.owtranquility.org"
+    config.hosts << "owtranquility.org"
     config.active_job.queue_adapter = :sidekiq
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
