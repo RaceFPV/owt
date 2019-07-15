@@ -3,7 +3,7 @@
 
   .three-images {
     margin-bottom: 4rem;
-    min-height: 360px;
+    min-height: 25vh;
     position: relative;
   }
   
@@ -42,9 +42,6 @@
   }
   
   
-  
-  
-  
   .featured-image2-outer {
     position: absolute;
     margin-left: 50%;
@@ -78,39 +75,5 @@
     -ms-transform: skew(15deg,0deg); /* IE 9 */
     -webkit-transform: skew(15deg,0deg); /* Safari */
     transform: skew(15deg,0deg); /* Standard syntax */
-  }
-  
-  
-  
-  .two-images {
-    min-height: 360px;
-    position: relative;
-    right: -68%;
-    top: 0;
-    width: 40%;
-    -ms-transform: skew(-15deg,0deg); /* IE 9 */
-    -webkit-transform: skew(-15deg,0deg); /* Safari */
-    transform: skew(-15deg,0deg); /* Standard syntax */
-
-    .two-images-outer {
-      min-height: 180px;
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-
-      .two-images-inner {
-        position: absolute;
-        height: 170px;
-        right: 10%;
-        width: 100%;
-        -ms-transform: skew(15deg,0deg); /* IE 9 */
-        -webkit-transform: skew(15deg,0deg); /* Safari */
-        transform: skew(15deg,0deg); /* Standard syntax */
-      }
-    }
-    
-    .two-images-outer:nth-of-type(2) {
-      margin-top: 10px;
-    }
   }
 }

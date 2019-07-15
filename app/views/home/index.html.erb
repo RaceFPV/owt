@@ -1,26 +1,32 @@
-<br/><br/>
+<br/>
 <div class="three-images-wrapper">
 	<div class="three-images">
     <div class="featured-image-outer">
       <%= link_to tier_discord_path, class: "featured-image-inner", style: "background-image: url(#{asset_path 'splash/zen-discord.jpg'})" do %>
-        <h1 style="color: black;">Discord</h1>
+        <h3 style="margin-top:10px;padding-left:65px;" class="btn btn-secondary btn-block">Discord Teams <i class="fas fa-angle-right" style="padding-left:5px;"></i></h3>
       <% end %>
-      </div>
+    </div>
     <div class="featured-image2-outer">
       <%= link_to tier_harmony_path, class: "featured-image2-inner", style: "background-image: url(#{asset_path 'splash/zen-harmony.jpg'})" do %>
-        <h1 style="color: black;">Harmony</h1>
+        <h3 style="margin-top:10px;" class="btn btn-secondary btn-block">Harmony Teams  <i class="fas fa-angle-right" style="padding-left:5px;"></i></h3>
       <% end %>
     </div>
 	</div>
 </div>
-<!-- parallax testing
+<hr/>
+<div class="container">
+  <%= render 'home/welcome' %>
+</div>
+<br/>
+<div class="container">
+  <%= render 'home/matchups' %>
+</div>
+<br/>
+
+
+<!-- testing parallax
 <div class="row">
-  <div class="parallax" style="background-image: url(<%= asset_path 'splash/overwatch-logo-small.png' %>)">
-    <h3 class="parallax-call-action">Meet the teams</h3>
+  <div class="parallax" style="background-image: url(<%= asset_path 'owt_horizontal_logo.png' %>)">
   </div>
 </div>
 -->
-
-<div class="container">
-<%= render 'home/news' %>
-</div>

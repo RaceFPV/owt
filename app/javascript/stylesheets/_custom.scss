@@ -50,6 +50,17 @@ body {
   justify-content: center;
 }
 
+#wrap {
+  min-height: 100%;
+  margin-top: -60px;
+}
+
+#main {
+  overflow: auto;
+  padding-bottom: 90px; /* this needs to be bigger than footer height*/
+  padding-top: 116px;
+}
+
 .row {
   margin-left: 0;
   margin-right: 0;
@@ -98,7 +109,7 @@ body {
 
 .parallax {
   /* Set a specific height */
-  height: 500px; 
+  height: 10vh; 
   width: 100vw;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -140,7 +151,15 @@ body {
   background-color: rgba(255,255,255,0.25) !important;
 }
 
+.team-card-bg {
+  background-color: rgba(255,255,255,0.75) !important;
+}
+
 .team-card-btn {
   border-radius: 0px !important;
   border: none !important;
+}
+
+.col-no-padding {
+  padding: 0px !important;
 }
