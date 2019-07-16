@@ -25,6 +25,8 @@ gem 'twitter'
 gem 'google_drive'
 gem 'sidekiq'
 
+gem "barnes"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
