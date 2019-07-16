@@ -1,0 +1,27 @@
+    <div class="col-md-2">
+        <h1><%= team.name %></h1>
+    </div>
+    <div class="col-md-2">
+        <h6>Division</h6>
+        <%= link_to tier_discord_path, class: 'top-cover-link-black' do %><h4><%= team.tier.upcase %></h4> <% end %>
+        <br/>
+        <h6>SR</h6>
+        <h4><%= team.sr %></h4>
+    </div>
+    <div class="col-md-2">
+        <h6>GM</h6>
+        <h4><%= if team.gm.empty? then "None" else team.gm end %></h4>
+        <br/>
+        <h6>Coach</h6>
+        <h4><%= if team.coach.empty? then "None" else team.coach end %></h4>
+        <br/>
+        <h6>Affiliate</h6>
+        <h4><%= if team.affiliate.nil? then "None" else team.affiliate end %></h4>
+    </div>
+    <div class="col-md-2">
+        <h6>Twitter</h6>
+        <h4><a class="top-cover-link-black" href="https://twitter.com/<%= team.twitterlink %>"><%= team.twittername %></a></h4>
+        <br/>
+        <h6>Discord</h6>
+        <h4><a class="top-cover-link-black" href="<%= team.discordlink %>"><%= team.discordname %></a></h4>
+    </div>
