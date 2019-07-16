@@ -11,10 +11,13 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <%= link_to('Discord', tier_discord_path, class: "nav-link") %>
+          <%= link_to('Discord Tier', tier_discord_path, class: "nav-link") %>
         </li>
         <li class="nav-item">
-          <%= link_to('Harmony', tier_harmony_path, class: "nav-link") %>
+          <%= link_to('Harmony Tier', tier_harmony_path, class: "nav-link") %>
+        </li>
+        <li class="nav-item">
+          <%= link_to('Schedule', "https://www.toornament.com/en_US/tournaments/2668807297997963264/information", class: "nav-link", :target => "_blank") %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,11 +36,22 @@
 					<li class="nav-item"><%= link_to('Login', new_user_session_path, class: "nav-link") %></li>
 				<% end %>
 				-->
-        <li class="nav-item">
-          <%= link_to('Swag', "https://shop.spreadshirt.com/owtranquility/", class: "nav-link", :target => "_blank") %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Swag
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to('Shirts', "https://shop.spreadshirt.com/owtranquility/", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Jerseys', "https://shop.spreadshirt.com/owtranquilityjerseys", class: "dropdown-item", :target => "_blank") %>
+          </div>
         </li>
-        <li class="nav-item">
-          <%= link_to('Discord', "https://discord.gg/DFyvhG", class: "nav-link", :target => "_blank") %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            More
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to('Join Us', "https://discord.gg/DFyvhG", class: "dropdown-item", :target => "_blank") %>
+          </div>
         </li>
       </ul>
     </div>
