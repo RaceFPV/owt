@@ -10,6 +10,10 @@ class DiscordRosterScrapeJob < ActiveJob::Base
       team_save(x)
       player_save(x)
     end
+    puts "purging all player profiles older than one hour---this is an ugly hack"
+    Player.where("created_at < ?", 1.hours.ago).delete_all
+    puts "purging all team profiles older than one hour---this is an ugly hack"
+    Team.where("created_at < ?", 1.hours.ago).delete_all
   end
   
   def team_save(x)
