@@ -7,9 +7,9 @@ class HarmonyRosterScrapeJob < ActiveJob::Base
     ws = session.spreadsheet_by_key("1oZA-RmtUFRVpo8OS9sNzaK9vRbsihkC9GFgzGvGS-HY").worksheets
     puts "Found spreadsheet, cycling through tabs...."
     puts "purging all player profiles---this is an ugly hack"
-    Player.find_by_tier("harmony").delete_all
+    Player.where(:tier => "harmony").delete_all
     puts "purging all team profiles---this is an ugly hack"
-    Team.find_by_tier("harmony").delete_all
+    Team.where(:tier => "harmony").delete_all
     ws.drop(1).each do |x|
       team_save(x)
       player_save(x)
