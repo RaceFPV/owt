@@ -2,18 +2,18 @@ class HarmonyRosterScrapeJob < ActiveJob::Base
   queue_as :default
 
   def perform
-    puts "Starting discord scrape job..."
+    puts "Starting harmony scrape job..."
     session = GoogleDrive::Session.from_service_account_key(StringIO.new(ENV['SERVICE_ACCOUNT']))
     ws = session.spreadsheet_by_key("1oZA-RmtUFRVpo8OS9sNzaK9vRbsihkC9GFgzGvGS-HY").worksheets
     puts "Found spreadsheet, cycling through tabs...."
+    puts "purging all player profiles---this is an ugly hack"
+    Player.find_by_tier("harmony").delete_all
+    puts "purging all team profiles---this is an ugly hack"
+    Team.find_by_tier("harmony").delete_all
     ws.drop(1).each do |x|
       team_save(x)
       player_save(x)
     end
-    puts "purging all player profiles older than one hour---this is an ugly hack"
-    Player.where("created_at < ?", 1.hours.ago).delete_all
-    puts "purging all team profiles older than one hour---this is an ugly hack"
-    Team.where("created_at < ?", 1.hours.ago).delete_all
   end
   
   def team_save(x)
