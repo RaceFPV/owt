@@ -13,33 +13,7 @@ class DiscordRosterScrapeJob < ActiveJob::Base
   end
   
   def team_save(x)
-      if Team.where(name: x.title).exists?
-        puts "Team #{x.title} already exists, checking for updates"
-        team = Team.find_by_name(x.title)
-        sr = x[16, 4]
-        if !sr.nil? and team.sr.nil?
-          team.sr = sr.to_i
-        elsif !sr.nil?
-          team.sr ||= sr.to_i
-        end
-        team.gm ||= x[18, 1]
-        team.captain ||= x[19, 1]
-        team.coach ||= x[20, 1]
-        team.discordname ||= x[21, 1]
-        team.discordlink ||= x[21, 2]
-        team.twittername ||= x[22, 1]
-        team.twitterlink ||= x[22, 2]
-        team.tier ||= "discord"
-        puts "Collected team data..."
-        if team.changed?
-          puts "Team #{x.title} data changed, saving changes..."
-          team.save!
-        else  
-          puts "Team #{x.title} data not changed"
-        end
-        puts "Check for #{x.title} complete"
-      else
-        puts "Team #{x.title} not found... creating entry"
+        puts "Processing Team #{x.title}... creating entry"
         team = Team.new
         team.name = x.title
         sr = x[16, 4]
@@ -57,35 +31,12 @@ class DiscordRosterScrapeJob < ActiveJob::Base
         puts "Collected team data... saving"
         team.save!
         puts "Save complete"
-      end
     end
     
     def player_save(x)
       (6..15).each do |y|
         if !x[y, 1].empty?
-          if Player.where(name: x[y, 1]).exists?
-            puts "Player #{x[y, 1]} already exists, checking for updates"
-            player = Player.find_by_name(x[y, 1])
-            sr = x[y, 4]
-            if !sr.nil? and player.sr.nil?
-              player.sr = sr.to_i
-            elsif !sr.nil?
-              player.sr ||= sr.to_i
-            end
-            player.battletag ||= x[y, 2]
-            player.role ||= x[y, 3]
-            player.team_id ||= Team.find_by_name(x.title).id
-            player.tier ||= "discord"
-            puts "Collected player data..."
-            if player.changed?
-              puts "Player #{x[y, 1]} data changed, saving changes..."
-              player.save!
-            else  
-              puts "Player #{x[y, 1]} data not changed"
-            end
-            puts "Check for #{x[y, 1]} complete"
-          else
-            puts "Player #{x[y, 1]} not found... creating entry"
+            puts "Processing player #{x[y, 1]}... creating entry"
             player = Player.new
             player.name = x[y, 1]
             sr = x[y, 4]
@@ -99,7 +50,6 @@ class DiscordRosterScrapeJob < ActiveJob::Base
             puts "Collected player data... saving"
             player.save!
             puts "Save complete"
-          end
         end
       end
     end
