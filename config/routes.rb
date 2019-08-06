@@ -49,6 +49,10 @@ Rails.application.routes.draw do
   get 'team/unded_battery'
   get 'team/vitamin_c'
   
+  #other pages
+  get 'home/maps'
+  
+  
   #for login/logoff/registration
   devise_for :users
 end

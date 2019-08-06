@@ -1,0 +1,3 @@
+<% Dir.glob('app/assets/images/maps/*').map do |path| %>
+    <%= link_to(image_tag("maps/#{ File.basename(path) }", style: 'max-width: 40%;'), image_path( "maps/#{ File.basename(path) }")) %>
+<% end.reduce(&:+) %>

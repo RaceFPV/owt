@@ -16,8 +16,14 @@
         <li class="nav-item">
           <%= link_to('Harmony Tier', tier_harmony_path, class: "nav-link") %>
         </li>
-        <li class="nav-item">
-          <%= link_to('Schedule', "https://www.toornament.com/en_US/tournaments/2668807297997963264/information", class: "nav-link", :target => "_blank") %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Schedule
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to('Discord', "https://www.toornament.com/en_US/tournaments/2668807297997963264/matches/schedule", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Harmony', "https://www.toornament.com/en_US/tournaments/2664515754875863040/matches/schedule", class: "dropdown-item", :target => "_blank") %>
+          </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -54,6 +60,7 @@
             <%= link_to('Twitter', "https://twitter.com/owtranquility", class: "dropdown-item", :target => "_blank") %>
             <%= link_to('Youtube', "https://www.youtube.com/channel/UCUhzsY8PxIGQxqa-_r_CAag", class: "dropdown-item", :target => "_blank") %>
             <%= link_to('Discord', "https://discord.gg/DFyvhG", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Maps', home_maps_path, class: "dropdown-item") %>
           </div>
         </li>
       </ul>
