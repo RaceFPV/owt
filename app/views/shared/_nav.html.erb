@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <%= link_to(root_path, class: "navbar-brand") do %>
-      <%= image_tag 'owt_logo_small.png', class: 'd-inline-block align-top', style: 'width: 30px; height: 30px;' %>
+      <%= image_tag 'tranq2020favicon.png', class: 'd-inline-block align-top', style: 'width: 30px; height: 30px;' %>
       Overwatch Tranquility
     <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,63 +10,53 @@
         </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <%= link_to('Discord Tier', tier_discord_path, class: "nav-link") %>
-        </li>
-        <li class="nav-item">
-          <%= link_to('Harmony Tier', tier_harmony_path, class: "nav-link") %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tiers
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to('Harmony Tier 2000 – 2999 SR (2650 SR Average)', "https://docs.google.com/spreadsheets/d/1hE_IteozMxjLht6mf-vCB-a2kqXNEHhaCeR5_RMUJwk/edit?usp=sharing", class: "dropdown-item") %>
+            <%= link_to('Discord Tier 3000 – 3800 SR (3400 SR Average)', "https://www.toornament.com/en_US/tournaments/3251721588656209920/matches/schedule", class: "dropdown-item") %>
+            <%= link_to('Transcendence Tier (Open Tier)', "https://www.toornament.com/en_US/tournaments/3251760936426577920/matches/schedule", class: "dropdown-item") %>
+          </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Schedule
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to('Discord', "https://www.toornament.com/en_US/tournaments/2668807297997963264/matches/schedule", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Harmony', "https://www.toornament.com/en_US/tournaments/2664515754875863040/matches/schedule", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Harmony Tier', "https://www.toornament.com/en_US/tournaments/3251663705462497280/matches/schedule", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Discord Tier', "https://www.toornament.com/en_US/tournaments/3251721588656209920/matches/schedule", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Transcendence Tier', "https://www.toornament.com/en_US/tournaments/3251760936426577920/matches/schedule", class: "dropdown-item", :target => "_blank") %>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Past Seasons
+            Store
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to('Season Two', legacy_two_path, class: "dropdown-item") %>
-            <%= link_to('Season One', legacy_one_path, class: "dropdown-item") %>
-          </div>
-        </li>
-        <!-- We are not using logins right now
-				<% if user_signed_in? %>
-					<li class="nav-item"><%= link_to('My Account', edit_user_registration_path, class: "nav-link") %></li>
-					<li class="nav-item"><%= link_to "Sign out", destroy_user_session_path, class: "nav-link", :method => :delete %></li>
-				<% else %>
-					<li class="nav-item"><%= link_to('Login', new_user_session_path, class: "nav-link") %></li>
-				<% end %>
-				-->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Swag
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to('Shirts', "https://shop.spreadshirt.com/owtranquility/", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Apparel', "https://shop.spreadshirt.com/owtranquility/", class: "dropdown-item", :target => "_blank") %>
             <%= link_to('Jerseys', "https://shop.spreadshirt.com/owtranquilityjerseys", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Retired Jerseys', "https://shop.spreadshirt.com/owtranquilityretired/", class: "dropdown-item", :target => "_blank") %>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            More
+            Social Media
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to('Twitch', "https://www.twitch.tv/owtranquility", class: "dropdown-item", :target => "_blank") %>
             <%= link_to('Twitter', "https://twitter.com/owtranquility", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Youtube', "https://www.youtube.com/channel/UCUhzsY8PxIGQxqa-_r_CAag", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Discord', "https://discord.gg/DFyvhG", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Youtube', "http://www.youtube.com/c/owtranquility", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Discord', "http://www.discord.io/owtranquility", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Facebook', "http://www.facebook.com/owtranquility", class: "dropdown-item", :target => "_blank") %>
             <%= link_to('Maps', home_maps_path, class: "dropdown-item") %>
           </div>
+        </li>
+        <li class="nav-item">
+          <%= link_to('Contact', home_contact_path, class: "nav-link") %>
         </li>
       </ul>
     </div>
   </div>
-  
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 </nav>

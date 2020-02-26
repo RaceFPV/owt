@@ -1,28 +1,9 @@
-<br/>
-<div class="three-images-wrapper">
-	<div class="three-images">
-    <div class="featured-image-outer">
-      <%= link_to tier_discord_path, class: "featured-image-inner", style: "background-image: url(#{asset_path 'splash/zen-discord.jpg'})" do %>
-        <h3 style="margin-top:10px;padding-left:65px;" class="btn btn-secondary btn-block">Discord Teams <i class="fas fa-angle-right" style="padding-left:5px;"></i></h3>
-      <% end %>
-    </div>
-    <div class="featured-image2-outer">
-      <%= link_to tier_harmony_path, class: "featured-image2-inner", style: "background-image: url(#{asset_path 'splash/zen-harmony.jpg'})" do %>
-        <h3 style="margin-top:10px;" class="btn btn-secondary btn-block">Harmony Teams  <i class="fas fa-angle-right" style="padding-left:5px;"></i></h3>
-      <% end %>
-    </div>
-	</div>
+<div style="background-image: url(<%= asset_path 'mainpageBackdrop.png' %>); background-size: cover; background-repeat: no-repeat; background-position: cover; width: 100vw" >
+<div class="container">
+<div class="row justify-content-md-center align-items-center" style="height:100vh;">
+<div class="col-sm-10">
+<%= render 'home/welcome'%>
 </div>
-<br/><br/>
-<%= render 'home/season3welcome'%>
-<h1> Season III has begun</h1>
-<h4><a href="https://www.twitch.tv/owtranquility" style="color: #fd9f2b;">Watch the latest matches on twitch.tv</a></h4>
-<br/><br/><br/><br/><br/>
-
-
-<!-- testing parallax
-<div class="row">
-  <div class="parallax" style="background-image: url(<%= asset_path 'owt_horizontal_logo.png' %>)">
-  </div>
 </div>
--->
+</div>
+</div>

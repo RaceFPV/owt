@@ -4,4 +4,7 @@ class LegacyController < ApplicationController
 
   def two
   end
+
+  def three
+  end
 end

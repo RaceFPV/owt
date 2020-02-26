@@ -2,9 +2,12 @@ class HomeController < ApplicationController
   def index
   end
   
-  def scrape
-  end
-  
   def about
+  end
+
+  def contact
+  end
+
+  def maps
   end
 end

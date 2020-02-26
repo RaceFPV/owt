@@ -1,15 +1,24 @@
 # README
 
-## Dev setup instructions (ubuntu/docker):
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-install yarn: https://yarnpkg.com/lang/en/docs/install/#debian-stable
+Things you may want to cover:
 
-install webpacker: rails webpacker:install
+* Ruby version
 
-install other css/js things: yarn add bootstrap@4.3.1 jquery popper.js webpack
+* System dependencies
 
-create the database: rails db:setup
+* Configuration
 
-export the google drive service account json file as an env variable:  export SERVICE_ACCOUNT='{xxxxxxxx}'   (also add it to bashrc)
+* Database creation
 
-start the server: rails server
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
