@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: owt
+spec:
+  selector:
+    matchLabels:
+      app: owt
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: owt
+    spec:
+      containers:
+        - name: owt
+          image: racefpv/owt
+          imagePullPolicy: Always
+          ports:
+            - name: listen-port
+              containerPort: 8080
+          resources:
+            requests:
+              cpu: 10m
+              memory: 128Mi
+            limits:
+              cpu: 1
+              memory: 256Mi

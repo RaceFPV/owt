@@ -7,6 +7,7 @@ RUN apk add --update \
   sqlite \
   sqlite-dev \
   sqlite-libs \
+  postgresql-dev \
   && rm -rf /var/cache/apk/*
 
 # Use libxml2, libxslt a packages from alpine for building nokogiri
