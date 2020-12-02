@@ -52,11 +52,10 @@ body {
 
 #wrap {
   min-height: 100%;
-  margin-top: -60px;
+  padding-bottom: 90px;
 }
 
 #main {
-  overflow: auto;
   padding-bottom: 90px; /* this needs to be bigger than footer height*/
   padding-top: 116px;
 }
