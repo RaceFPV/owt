@@ -50,14 +50,18 @@ body {
   justify-content: center;
 }
 
-#wrap {
-  min-height: 100%;
-  padding-bottom: 90px;
+#main {
+  padding-top: 20px;
 }
 
-#main {
-  padding-bottom: 90px; /* this needs to be bigger than footer height*/
+#wrap {
+  min-height: 100%;
+  padding-bottom: 30px;
 }
+
+// #main {
+//   padding-bottom: 90px; /* this needs to be bigger than footer height*/
+// }
 
 .row {
   margin-left: 0;
