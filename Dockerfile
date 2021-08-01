@@ -1,21 +1,14 @@
-FROM ruby:2.6-alpine
+FROM ruby:3.0.2-alpine
 
 RUN apk add --update \
   build-base \
-  libxml2-dev \
-  libxslt-dev \
-  sqlite \
-  sqlite-dev \
-  sqlite-libs \
-  postgresql-dev \
+  nodejs \
   && rm -rf /var/cache/apk/*
-
-# Use libxml2, libxslt a packages from alpine for building nokogiri
-RUN bundle config build.nokogiri --use-system-libraries
 
 WORKDIR /usr/src/app
 
 COPY Gemfile Gemfile.lock ./
+RUN gem install bundler:1.17.2
 RUN bundle install
 
 COPY . .
