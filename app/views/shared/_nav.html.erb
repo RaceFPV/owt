@@ -15,9 +15,9 @@
             Rosters
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to('Harmony Tier 2000 – 3000 SR (2650 SR Average)', "http://owtranquility.org/harmonyrosters", class: "dropdown-item") %>
-            <%= link_to('Discord Tier 2800 – 3500 SR (3200 SR Average)', "http://owtranquility.org/discordrosters", class: "dropdown-item") %>
-            <%= link_to('Transcendence Tier 3300 - 4000 SR (3750 SR Average)', "http://owtranquility.org/trancerosters", class: "dropdown-item") %>
+            <%= link_to('Harmony Tier 2000 – 3000 SR (2650 SR Average)', harmonyrosters_path, class: "dropdown-item") %>
+            <%= link_to('Discord Tier 2800 – 3500 SR (3200 SR Average)', discordrosters_path, class: "dropdown-item") %>
+            <%= link_to('Transcendence Tier 3300 - 4000 SR (3750 SR Average)', trancerosters_path, class: "dropdown-item") %>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -25,15 +25,15 @@
             Matches
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to('Harmony Tier Aurum', "http://owtranquility.org/wmsharmonyaurum", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Harmony Tier Indigo', "http://owtranquility.org/wmsharmonyindigo", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Harmony Tier Elimination', "http://owtranquility.org/wmsharmonyelimination", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Discord Tier Aurum', "http://owtranquility.org/wmsdiscordaurum", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Discord Tier Indigo', "http://owtranquility.org/wmsdiscordindigo", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Discord Tier Elimination', "http://owtranquility.org/wmsdiscordelimination", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Transcendence Tier Aurum', "http://owtranquility.org/wmstranceaurum", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Transcendence Tier Indigo', "http://owtranquility.org/wmstranceindigo", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Transcendence Tier Elimination', "http://owtranquility.org/wmstranceelimination", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Harmony Tier Aurum', wmsharmonyaurum_path, class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Harmony Tier Indigo', wmsharmonyindigo_path, class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Harmony Tier Elimination', wmsharmonyelimination_path, class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Discord Tier Aurum', wmsdiscordaurum_path, class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Discord Tier Indigo', wmsdiscordindigo_path, class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Discord Tier Elimination', wmsdiscordelimination_path, class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Transcendence Tier Aurum', wmstranceaurum_path, class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Transcendence Tier Indigo', wmstranceindigo_path, class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Transcendence Tier Elimination', wmstranceelimination_path, class: "dropdown-item", :target => "_blank") %>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -41,9 +41,9 @@
             Schedule
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to('Harmony Tier', "http://owtranquility.org/harmonyschedule", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Discord Tier', "http://owtranquility.org/discordschedule", class: "dropdown-item", :target => "_blank") %>
-            <%= link_to('Transcendence Tier', "http://owtranquility.org/tranceschedule", class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Harmony Tier', harmonyschedule_path, class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Discord Tier', discordschedule_path, class: "dropdown-item", :target => "_blank") %>
+            <%= link_to('Transcendence Tier', tranceschedule_path, class: "dropdown-item", :target => "_blank") %>
           </div>
         </li>
         <li class="nav-item dropdown">
